@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcultor Design</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row cal-row">
+            <div class="col-md-12">
+                <form action="#" name="calsi" class="main">
+                    <input type="text" class="display form-control" name="display" id="display" placeholder="0"/><br>
+                    <table class="cal-table">
+                        <tbody>
+                            <tr>
+                                <td><input type="button" class="btn btn-primary btn-font" value="DEG"/></td>
+                                <td><input type="button" class="btn btn-primary btn-font" value="F-E" onclick="operation(this.id)" id="FE"/></td>
+                            </tr>
+                            <tr>
+                                <td><input type="button" class="btn btnMemory" value="MC" onclick="memoryOperation(this.id)" id="mc" disabled/></td>
+                                <td><input type="button" class="btn btnMemory" value="MR" onclick="memoryOperation(this.id)" id="mr" disabled/></td>
+                                <td><input type="button" class="btn btn-primary btn-font" value="M+" onclick="memoryOperation(this.id)" id="mAdd"/></td>
+                                <td><input type="button" class="btn btn-primary btn-font" value="M-" onclick="memoryOperation(this.id)" id="mSubtract"/></td>
+                                <td><input type="button" class="btn btn-primary btn-font" value="MS" onclick="memoryOperation(this.id)" id="ms"/></td>
+                            </tr> 
+                            <tr>
+                                <td colspan="2">
+                                    <div class="dropdown">
+                                        <a class="btn btn-secondary dropdown-toggle btn-fun" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            ◢ Trigonometry
+                                        </a>  
+                                        <div class="dropdown-menu">
+                                            <table class="cal-table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td><input type="button" class="btn btn-primary" value="sin" onclick="trigonometry(this.id)" id="sin"/></td>
+                                                        <td><input type="button" class="btn btn-primary" value="cos" onclick="trigonometry(this.id)" id="cos"/></td>
+                                                        <td><input type="button" class="btn btn-primary" value="tan" onclick="trigonometry(this.id)" id="tan"/></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="button" class="btn btn-primary" value="sinh" onclick="trigonometry(this.id)" id="sinh"/></td>
+                                                        <td><input type="button" class="btn btn-primary" value="cosh" onclick="trigonometry(this.id)" id="cosh"/></td>
+                                                        <td><input type="button" class="btn btn-primary" value="tanh" onclick="trigonometry(this.id)" id="tanh"/></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                      </div>
+                                </td>
+                                <td colspan="2">
+                                    <div class="dropdown">
+                                        <a class="btn btn-secondary dropdown-toggle btn-fun" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            ƒ Function
+                                        </a>  
+                                        <div class="dropdown-menu">
+                                            <table class="cal-table">
+                                                <tr>
+                                                    <td><input type="button" class="btn btn-primary" value="rand"/></td>
+                                                    <td><input type="button" class="btn btn-primary" value="->dms"/></td>
+                                                    <td><input type="button" class="btn btn-primary" value="->deg"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="button" class="btn btn-primary" value="|x|" onclick="fun(this.id)" id="abslute"/></td>
+                                                    <td><input type="button" class="btn btn-primary" value="(x)" onclick="fun(this.id)" id="squrX"/></td>
+                                                    <td><input type="button" class="btn btn-primary" value="$" onclick="fun(this.id)" id="dolor"/></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                      </div>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><button class="btn btn-primary" type="submit" onclick="twoPowerND()">2<sup>nd</sup></button></td>
+                                <td><input type="button" class="btn btn-primary" value="π" onclick="piOperation()" id="pi"/></td>
+                                <td><input type="button" class="btn btn-primary" value="e" onclick="EOperation()" id="e"/></td>
+                                <td><input type="button" class="btn btn-primary" value="C" onclick="operation(this.id)" id="clear"/></td>
+                                <td><input type="button" class="btn btn-primary" value="⌫" onclick="operation(this.id)" id="backSpace"/></td>
+                            </tr>
+                            <tr>
+                                <td><input type="button" class="btn btn-primary" value="x²" onclick="operation(this.id)" id="square"/></td>
+                                <td><button class="btn btn-primary" type="button" onclick="operation(this.id)" id="oneByX"><sup>1</sup>/<sub>x</sub></button></td>
+                                <td><input type="button" class="btn btn-primary" value="|x|" onclick="operation(this.id)" id="abs"/></td>
+                                <td><input type="button" class="btn btn-primary" value="exp" onclick="operation(this.id)" id="exp"/></td>
+                                <td><input type="button" class="btn btn-primary" value="mod" onclick="arithmetic(this.id)" id="mod"/></td>
+                            </tr>
+                            <tr>
+                                <td><input type="button" class="btn btn-primary" value="2√x" onclick="operation(this.id)" id="squareRoot"/></td>
+                                <td><input type="button" class="btn btn-primary" value="(" onclick="bodmas(this.id)" id="openbracket"/></td>
+                                <td><input type="button" class="btn btn-primary" value=")" onclick="bodmas(this.id)" id="closebracket"/></td>
+                                <td><input type="button" class="btn btn-primary" value="n!" onclick="factorial()"/></td>
+                                <td><input type="button" class="btn btn-primary" value="÷" onclick="arithmetic(this.id)" id="devide"/></td>
+                            </tr>
+                            <tr>
+                                <td><button class="btn btn-primary" type="button" onclick="arithmetic(this.id)" id="xPowY">x<sup>y</sup></button></td>
+                                <td><input type="button" class="btn btn-primary cal-num" value="7" onclick="displayNum(this.id)" id="seven"/></td>
+                                <td><input type="button" class="btn btn-primary cal-num" value="8" onclick="displayNum(this.id)" id="eight"/></td>
+                                <td><input type="button" class="btn btn-primary cal-num" value="9" onclick="displayNum(this.id)" id="nine"/></td>
+                                <td><input type="button" class="btn btn-primary" value="*" onclick="arithmetic(this.id)" id="multiply"/></td>
+                            </tr>
+                            <tr>
+                                <td><button class="btn btn-primary" type="button" onclick="operation(this.id)" id="tenPowerX">10<sup>x</sup></button></td>
+                                <td><input type="button" class="btn btn-primary cal-num" value="4" onclick="displayNum(this.id)" id="four"/></td>
+                                <td><input type="button" class="btn btn-primary cal-num" value="5" onclick="displayNum(this.id)" id="five"/></td>
+                                <td><input type="button" class="btn btn-primary cal-num" value="6" onclick="displayNum(this.id)" id="six"/></td>
+                                <td><input type="button" class="btn btn-primary" value="-" onclick="arithmetic(this.id)" id="subtract"/></td>
+                            </tr>
+                            <tr>
+                                <td><input type="button" class="btn btn-primary" value="log" onclick="operation(this.id)" id="log"/></td>
+                                <td><input type="button" class="btn btn-primary cal-num" value="1" onclick="displayNum(this.id)" id="one"/></td>
+                                <td><input type="button" class="btn btn-primary cal-num" value="2" onclick="displayNum(this.id)" id="two"/></td>
+                                <td><input type="button" class="btn btn-primary cal-num" value="3" onclick="displayNum(this.id)" id="three"/></td>
+                                <td><input type="button" class="btn btn-primary" value="+" onclick="arithmetic(this.id)" id="add"/></td>
+                            </tr>
+                            <tr>
+                                <td><input type="button" class="btn btn-primary" value="ln" onclick="operation(this.id)" id="ln"/></td>
+                                <td><button class="btn btn-primary cal-num" type="button" onclick="plusMin(this.id)" id="plus-min"><sup>+</sup>/<sub>-</sub></button></td>
+                                <td><input type="button" class="btn btn-primary cal-num" value="0" onclick="displayNum(this.id)" id="zero"/></td>
+                                <td><input type="button" class="btn btn-primary cal-num" value="." onclick="pointOperation()" id="point"/></td>
+                                <td><input type="button" class="btn btn-primary btn-eql" value="=" onclick="operation(this.id)" id="equal"/><br></td>
+                            </tr>
+                        </tbody>
+                    </table>       
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--JS files-->
+    <script src="js/calculator.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
