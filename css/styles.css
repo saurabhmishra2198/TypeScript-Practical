@@ -46,3 +46,15 @@
     background-color: #fff;
     color: black;
 }
+input { 
+    text-align: right; 
+}
+.inputBox{
+    background-color: rgb(243,243,243) ;
+}
+.display{
+    border: none;
+    background-color: rgb(243,243,243);
+    font-weight: 700;
+    font-size: 2em;
+}
